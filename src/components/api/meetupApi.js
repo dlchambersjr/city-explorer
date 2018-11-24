@@ -7,5 +7,12 @@ class MeetupApi extends React.Component {
       tbd: 'TBD',
     };
   }
+  render() {
+    return (
+      <React.Fragment>
+        <h1>this is where the Meetup goes</h1>
+      </React.Fragment>
+    );
+  }
 }
 export default MeetupApi;

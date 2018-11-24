@@ -7,6 +7,13 @@ class HikingApi extends React.Component {
       tbd: 'TBD',
     };
   }
+  render() {
+    return (
+      <React.Fragment>
+        <h1>this is where the hiking goes</h1>
+      </React.Fragment>
+    );
+  }
 }
 
 export default HikingApi;

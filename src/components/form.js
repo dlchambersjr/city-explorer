@@ -3,18 +3,29 @@ import React from 'react';
 class Form extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      tbd: 'TBD',
-    };
+  }
+
+  handleSubmit = async event => {
+    event.preventDefault();
+    let serverUrl = 'https://city-explorer-backend.herokuapp.com'
+
   }
 
   render() {
     return (
       <React.Fragment>
-        <h1>this is where the form goes</h1>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type='text'
+            name='location'
+            placeholder='Please enter a location...'
+          />
+          <button>Explore!</button>
+        </form>
       </React.Fragment>
     );
   }
+
 }
 
 export default Form;
