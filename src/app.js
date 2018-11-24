@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 
-class App extends Component {
+import Header from './components/header';
+import Form from './components/form.js';
+// import GoogleApi from './components/api/googleApi.js';
+
+
+class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-
-          <p>
-            THIS IS THE PAGE
-          </p>
-
-        </header>
+        <Header />
+        <Form />
+        {/* <GoogleApi /> */}
       </div>
     );
   }
