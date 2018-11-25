@@ -5,12 +5,6 @@ class Form extends React.Component {
     super(props);
   }
 
-  handleSubmit = async event => {
-    event.preventDefault();
-    let serverUrl = 'https://city-explorer-backend.herokuapp.com'
-
-  }
-
   render() {
     return (
       <React.Fragment>

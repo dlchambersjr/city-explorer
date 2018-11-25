@@ -6,6 +6,20 @@ import Form from './components/form.js';
 
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      search_query: '',
+      serverURL: 'https://city-explorer-backend.herokuapp.com',
+    };
+  }
+
+
+  handleSubmit(event) {
+    event.preventDefault();
+
+  }
+
   render() {
     return (
       <div className="App">
@@ -15,6 +29,8 @@ class App extends React.Component {
       </div>
     );
   }
+
+
 }
 
 export default App;

@@ -4,9 +4,15 @@ class GoogleApi extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tbd: 'TBD',
+      search_query: '',
+      path: '/location',
+      formatted_query: '',
+      latitude:'',
+      longitude:'',
     };
   }
+
+
   render() {
     return (
       <React.Fragment>
