@@ -1,0 +1,7 @@
+@mixin borderRadius($radius){
+  border-radius: $radius * 1px; //TODO: Is it necessary to multiply by 1px? 
+}
+
+@mixin rightBleed($bleed){
+  bleed: $bleed;
+}

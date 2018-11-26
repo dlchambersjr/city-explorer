@@ -1,44 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# City Explorer
 
-## Available Scripts
+## Author: David Chambers/Code Fellows Instruction team
 
-In the project directory, you can run:
+## Links and Resources
+* [repo](https://github.com/dlchambersjr/city-explorer)
+* [deployed site](http://dc-city-explorer.s3-website-us-west-2.amazonaws.com/)
 
-### `npm start`
+## Containers
+### `app.js`
+app.js is the central hub for all the various components in the app.  It provides a form to receive the search location and then retrieves the requested location's information from each API. The retrieved information is then rendered by the relevant components.
+#### Exported Values and Methods
+* `handleSubmit(arity 1)` - Receives the form input from the form container and uses it to retrieve the map and geo-location information from the Google API.
+* `getResource(arity 2)` - Receives a path and the location data generated from the Google API call. Retrieves the API data and updates state.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `form.js`
+form.js renders the input form that collects the location to be searched for in the APIs. It returns the form input to the handleSubmit method in app.js.  
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Components
+### `header.js`
+Exports a class that renders the title and instructional statement.
 
-### `npm test`
+### `darksky.js`
+exports a class that renders the DarkSky API information.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `yelp.js`
+exports a class that renders the Yelp API information.
 
-### `npm run build`
+### `meetup.js`
+exports a class that renders the Meetup API information.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `movies.js`
+exports a class that renders the The Movies API  information.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### `trails.js`
+exports a class that renders the Hiking Project API information.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Running the app
+* `npm start`
+* Endpoint: `/`
+  * Returns the landing page.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Tests
+* No tests were required for this app
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### UML
+[City-explorer](https://github.com/dlchambersjr/city-explorer/assets/city-explorer-uml.png)
