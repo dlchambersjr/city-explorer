@@ -48,4 +48,4 @@ exports a class that renders the Hiking Project API information.
 * No tests were required for this app
 
 #### UML
-[City-explorer](https://github.com/dlchambersjr/city-explorer/assets/city-explorer-uml.png)
+[City-explorer](https://github.com/dlchambersjr/city-explorer/blob/master/src/assets/city-explorer-uml.png)
