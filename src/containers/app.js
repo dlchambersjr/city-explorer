@@ -11,6 +11,8 @@ import MeetingAPI from '../components/api/meetup.js';
 import MoviesAPI from '../components/api/movies.js';
 import TrailsAPI from '../components/api/trails.js';
 
+import '../styles/design.scss';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -58,26 +60,32 @@ class App extends React.Component {
         this.getResource('movies', location.body);
         this.getResource('trails', location.body);
 
-        this.setState({ search_query, formatted_query, latitude, longitude, mapSource });
+        let resultsView = '';
+
+        this.setState({ search_query, formatted_query, latitude, longitude, mapSource, resultsView });
       })
       .catch(error => console.error(error));
   }
 
   render() {
     return (
-      <div className="App">
+      <React.Fragment>
 
         <Header />
         <Form onSubmit={this.handleSubmit} />
-        <img src={this.state.mapSource} alt="Map of Search Location"></img>
-        <h3>Here are the results for {this.state.formatted_query}</h3>
-        <WeatherAPI data={this.state.weather} />
-        <YelpAPI data={this.state.yelp} />
-        <MeetingAPI data={this.state.meetups} />
-        <MoviesAPI data={this.state.movies} />
-        <TrailsAPI data={this.state.trails} />
+        <img className={this.state.resultsView} id="map" src={this.state.mapSource} alt="Map of Search Location"></img>
+        <div className={this.state.resultsView}>
+          <h2 className="query-placeholder" >Here are the results for {this.state.formatted_query}</h2>
+          <div className="column-container ">
+            <WeatherAPI data={this.state.weather} view={this.state.resultsView} />
+            <YelpAPI data={this.state.yelp} view={this.state.resultsView} />
+            <MeetingAPI data={this.state.meetups} view={this.state.resultsView} />
+            <MoviesAPI data={this.state.movies} view={this.state.resultsView} />
+            <TrailsAPI data={this.state.trails} view={this.state.resultsView} />
+          </div>
+        </div>
 
-      </div>
+      </React.Fragment >
     );
   }
 

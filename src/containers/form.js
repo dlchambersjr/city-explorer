@@ -8,22 +8,24 @@ class Form extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const location = event.target.location.value;
+    const location = event.target.search.value;
     this.props.onSubmit(location);
   }
 
   render() {
     return (
-      <React.Fragment>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type='text'
-            name='location'
-            placeholder='Please enter a location...'
-          />
-          <button>Explore!</button>
-        </form>
-      </React.Fragment>
+
+      <form id="search-form" onSubmit={this.handleSubmit}>
+        <label htmlFor="search">Search for a location</label>
+        <input
+          id='input-search'
+          type='text'
+          name='search'
+          placeholder='Enter a location here'
+        />
+        <button type="submit">Explore!</button>
+      </form>
+
     );
   }
 }
