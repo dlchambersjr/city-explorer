@@ -6,6 +6,7 @@ class DarkSkyApi extends React.Component {
     return (
       <React.Fragment>
         <div>
+          <h3>Results from the DarkSky API</h3>
           <ul>
             {this.props.data.map((day, index) => (
               <li key={index}>The forcast for {day.time} is: {day.forecast}</li>

@@ -1,11 +1,15 @@
 import React from 'react';
+import superagent from 'superagent';
 
 import Header from '../components/header';
 import Form from './form.js';
-import superagent from 'superagent';
 
-import WeatherAPI from './api/darkSkyApi.js';
-import YelpAPI from './api/darkSkyApi.js';
+// Components used to render the results of the API calls
+import WeatherAPI from '../components/api/darkSky.js';
+import YelpAPI from '../components/api/yelp.js';
+import MeetingAPI from '../components/api/meetup.js';
+import MoviesAPI from '../components/api/movies.js';
+import TrailsAPI from '../components/api/trails.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -20,7 +24,7 @@ class App extends React.Component {
       resultsView: 'hide',
       weather: [],
       yelp: [],
-      meetup: [],
+      meetups: [],
       movies: [],
       trails: [],
     };
@@ -62,20 +66,20 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+
         <Header />
         <Form onSubmit={this.handleSubmit} />
         <img src={this.state.mapSource} alt="Map of Search Location"></img>
         <h3>Here are the results for {this.state.formatted_query}</h3>
         <WeatherAPI data={this.state.weather} />
-        <YelpAPI data={this.state.weather} />
-        <h3> YELP</h3>
-        <h3>MEETUP</h3>
-        <h3>MOVIES</h3>
-        <h3>HIKING</h3>
+        <YelpAPI data={this.state.yelp} />
+        <MeetingAPI data={this.state.meetups} />
+        <MoviesAPI data={this.state.movies} />
+        <TrailsAPI data={this.state.trails} />
+
       </div>
     );
   }
-
 
 }
 
